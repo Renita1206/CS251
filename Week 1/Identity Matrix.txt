@@ -1,0 +1,44 @@
+//Different methods to create an identity matrix
+
+void indentity1(int n, int a[n+1][n+1])
+{
+    for(int i=1;i<=n;i++)
+    {
+        for(int j=1;j<=n;j++)
+        {
+            if(i==j)
+                a[i][j]==1;
+            else
+                a[i][j]=0;
+        }
+    }
+}
+// # of assignments: n*n
+// # of comparisms: n*n
+
+void indentity2(int n, int a[n+1][n+1])
+{
+    for(int i=1;i<=n;i++)
+    {
+        for(int j=1;j<=n;j++)
+        {
+            a[i][j]==0;
+        }
+        a[i][i]=1;
+    }
+}
+// # of assignments: n*n + n  => order of growth is n^2 (highest order considered)
+// # of comparisms: 0
+
+void indentity3(int n, int a[n+1][n+1])
+{
+    for(int i=1;i<=n;i++)
+    {
+        for(int j=1;j<=n;j++)
+        {
+            a[i][j]=(i/j)*(j/i);
+        }
+    }
+}
+// # of assignments: n*n
+// # of comparisms: 0
