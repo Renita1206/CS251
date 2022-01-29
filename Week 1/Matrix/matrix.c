@@ -44,7 +44,7 @@ void multiply_matrix(int n; int a[n][n], int b[n][n], int c[n][n], int n)
         for(int j=0; j<n; j++)
         {
             c[i][j]=0; 
-            for(int x=0; r<n; r++)
+            for(int x=0; x<n; x++)
             {
                 c[i][j]+=a[i][x]*b[x][j];
             }

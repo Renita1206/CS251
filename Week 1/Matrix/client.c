@@ -27,20 +27,21 @@ int main()
 
     srand(time(0));
     
-    //clock_gettime(CLOCK_REALTIME, &start); // time to fill matrix
+    clock_gettime(CLOCK_REALTIME, &start); // time to fill matrix
     fill_matrix(a,n);
-    //clock_gettime(CLOCK_REALTIME, &end);
+    clock_gettime(CLOCK_REALTIME, &end);
+    printf("Time Elapsed to fill: %lf\n", time_elapsed(start,end));
     fill_matrix(b,n);
 
     clock_gettime(CLOCK_REALTIME, &start); // time to add 2 matrices
     add_matrix(a,b,c,n);
     clock_gettime(CLOCK_REALTIME, &end);
-    printf("Time Elapsed: %lf\n", time_elapsed(start,end));
+    printf("Time Elapsed to add: %lf\n", time_elapsed(start,end));
 
     clock_gettime(CLOCK_REALTIME, &start); // time to multiply 2 matrices
     multiply_matrix(a,b,c,n);
     clock_gettime(CLOCK_REALTIME, &end);
-    printf("Time Elapsed: %lf\n", time_elapsed(start,end));
+    printf("Time Elapsed to multiply: %lf\n", time_elapsed(start,end));
 
     display_matrix(a,n);
     display_matrix(b,n);
